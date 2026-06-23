@@ -1,0 +1,21 @@
+# Pipeline Ghigliottina — dipendenze (Python 3.10+)
+# Installazione su MacBook M4: python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+
+# Dati e utilità
+numpy
+tqdm
+
+# Embeddings / similarità (parte classica)
+gensim            # caricamento word vectors (word2vec/fastText)
+scikit-learn      # similarità coseno, utilità
+
+# LLM
+google-genai          # Gemini free tier (nuovo SDK; supporta thinking_budget=0)
+# ollama              # opzionale: client Python per modello locale; in alternativa si usa l'HTTP API di Ollama
+
+# Metriche di valutazione
+rouge-score
+sacrebleu
+bert-score        # usa il modello BERT multilingue (richiesto dalla traccia)
+torch             # backend per bert-score (su Mac usa MPS/Metal)
+transformers

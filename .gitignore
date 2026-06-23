@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Risorse dati non ridistribuite (vanno scaricate seguendo il README)
+data/
+*.vec
+*.bin
+*.gz
+*.tsv
+
+# Output che contengono il gold del test set (non pubblicare)
+results/*.json
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.toc
+*.synctex.gz
+
+# macOS
+.DS_Store
