@@ -23,10 +23,16 @@ def main() -> None:
     args = ap.parse_args()
 
     res = LexicalResources.from_files(
-        config.POLIREMATICHE_PATH, config.DEMAURO_PATH, config.PROVERBI_PATH
+        config.POLIREMATICHE_PATH, config.DEMAURO_PATH, config.PROVERBI_PATH,
+        wiki_titles_path=config.WIKI_TITLES_PATH,
+        corpus_assoc_path=config.CORPUS_ASSOC_PATH,
     )
     emb = EmbeddingModel.load(config.EMBEDDINGS_PATH)
-    solver = ClassicSolver(res, embeddings=emb, alpha=config.ALPHA_MWE, beta=config.BETA_EMB)
+    solver = ClassicSolver(
+        res, embeddings=emb, beta=config.BETA_EMB,
+        emb_threshold=config.EMB_THRESHOLD, emb_neighbors=config.EMB_NEIGHBORS,
+        corpus_pmi_threshold=config.CORPUS_PMI_THRESHOLD, gamma=config.CORPUS_GAMMA,
+    )
     g = load_games(config.TEST_PATH)[args.idx]
 
     candidates = solver.candidate_pool(g.hints, top_k=config.TOP_K_CANDIDATES)

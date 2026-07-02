@@ -66,7 +66,7 @@ def main() -> None:
     gs = GraphSolver(res, emb, emb_neighbors=nbr, tau=tau, emb_weight=embW, restart=rest)
     a, m = evaluate(gs, test)
     print(f"\nGraphSolver sul TEST: Acc@1={a:.0f}%  MRR={m:.3f}")
-    print("(riferimento: solver classico = 31% Acc@1, MRR 0.37)")
+    print("(riferimento: solver classico sulle stesse risorse — vedi run_baseline.py)")
 
 
 if __name__ == "__main__":

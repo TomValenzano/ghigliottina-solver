@@ -81,7 +81,6 @@ def parse_solution(text: str, fallback: str = "") -> str:
         if sol:
             return sol.split()[0]
     # fallback: prima parola-contenuto (salta articoli/preposizioni e "soluzione")
-    import re
     skip = {"la", "il", "lo", "è", "e", "soluzione", "parola", "una", "un", "the"}
     for w in re.findall(r"[a-zàèéìòù]+", text.lower()):
         if w not in skip and len(w) > 1:

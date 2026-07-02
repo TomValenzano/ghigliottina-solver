@@ -50,6 +50,9 @@ si attesta a 0.73.
 - Risultati deterministici: i pareggi di punteggio sono risolti in ordine alfabetico,
   identici su qualsiasi macchina.
 - Il filtraggio delle stopword e la penalità di rarità (∝ 1/√freq) impediscono alle
-  parole molto comuni (es. "fare", "dire") di dominare il ranking.
+  parole molto comuni (es. "dire", "grande") di dominare il ranking.
+- MRR e soluzione-nei-top-50 sono calcolati da `run_baseline.py` sul ranking
+  completo; accuracy, tempi e metriche di descrizione da `run_eval.py` sulle
+  predizioni salvate.
 - Riferimento allo stato dell'arte: il sistema UNIOR4NLP/Sangati dichiara 68.6% Acc@1
   su un dataset EVALITA ridotto, usando pattern sintattici su corpus più grandi.

@@ -1,4 +1,4 @@
-# Pipeline Ghigliottina — dipendenze (Python 3.10+)
+# Pipeline Ghigliottina — dipendenze (Python 3.9+)
 # Installazione su MacBook M4: python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
 
 # Dati e utilità

@@ -37,6 +37,7 @@ class GhigliottinaPipeline:
         self.engine = engine
         self.few_shot = few_shot or []
         self.top_k = top_k
+        self._last_error = ""
 
     def solve(
         self, hints: list[str], generate_desc: bool = True, llm_select: bool = False
