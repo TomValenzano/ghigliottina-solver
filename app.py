@@ -27,7 +27,11 @@ from data_utils import load_games
 from resources import LexicalResources
 
 TOP_N = 10
-EXAMPLE = ["doppio", "carta", "soldi", "pasta", "regalo"]
+# Partite reali del test set risolte correttamente dal sistema
+EXAMPLES = [
+    ("cassa", ["legno", "forte", "continua", "malattia", "veloce"]),
+    ("sonno", ["ore", "pesante", "cura", "arretrato", "cascare"]),
+]
 
 
 # ------------------------------------------------------------------ caching
@@ -99,9 +103,11 @@ with st.sidebar:
         st.warning("CORPUS_ASSOC_PATH non impostato: collocazioni escluse.")
     st.write(f"Soglia PMI copertura: **{config.CORPUS_PMI_THRESHOLD}**")
     st.divider()
-    if st.button("Esempio (soluzione: pacco)"):
-        for i, w in enumerate(EXAMPLE):
-            st.session_state[f"hint{i}"] = w
+    st.caption("Esempi dal test set:")
+    for sol, words in EXAMPLES:
+        if st.button(f"Soluzione: {sol}", key=f"ex_{sol}"):
+            for i, w in enumerate(words):
+                st.session_state[f"hint{i}"] = w
 
 cols = st.columns(5)
 hints = [
