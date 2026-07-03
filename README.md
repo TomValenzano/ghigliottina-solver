@@ -59,6 +59,7 @@ ghigliottina_solver/
 │   ├── run_baseline.py / run_full.py / run_eval.py
 │   └── run_corpus.py / tune_scoring.py / run_graph.py / run_compare_scoring.py
 ├── results/                 # metriche e analisi
+├── app.py                   # demo interattiva (Streamlit)
 ├── requirements.txt
 └── README.md
 ```
@@ -105,6 +106,19 @@ CORPUS_ASSOC_PATH=../data/corpus_assoc.tsv \
 
 # Valutazione: accuracy, tempi, ROUGE/BLEU/BERTScore
 python run_eval.py --pred ../results/pred_final.json
+```
+
+## Demo interattiva
+
+Interfaccia Streamlit per provare il solver dal vivo: cinque indizi in input,
+classifica dei candidati con copertura per indizio, evidenze dalla knowledge
+base e descrizione opzionale via Ollama.
+
+```bash
+pip install streamlit
+WIKI_TITLES_PATH=/path/itwiki-latest-all-titles-in-ns0 \
+CORPUS_ASSOC_PATH=data/corpus_assoc.tsv \
+  streamlit run app.py
 ```
 
 ## Riferimenti

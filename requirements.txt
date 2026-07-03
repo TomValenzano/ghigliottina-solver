@@ -13,6 +13,9 @@ scikit-learn      # similarità coseno, utilità
 google-genai          # Gemini free tier (nuovo SDK; supporta thinking_budget=0)
 # ollama              # opzionale: client Python per modello locale; in alternativa si usa l'HTTP API di Ollama
 
+# Demo interattiva (opzionale)
+# streamlit          # interfaccia: streamlit run app.py
+
 # Metriche di valutazione
 rouge-score
 sacrebleu
